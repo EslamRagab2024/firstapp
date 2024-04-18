@@ -1,0 +1,13 @@
+<div class="container">
+    <h2 class="text-center">Edit Task</h2>
+    
+        <input #taskName type="text" class="form-control"  [(ngModel)]="mytask.Name">
+        <br>
+        <input #taskDescription type="text" class="form-control"  [(ngModel)]="mytask.Description">
+        <br>
+        <input #taskdate type="text" class="form-control"  [(ngModel)]="mytask.date">
+        <br>
+        <button class="btn btn-success"  (click)="editdata()">Save</button>
+        <a class="btn btn-primary" routerLink="/">Cancel</a>
+    
+</div>

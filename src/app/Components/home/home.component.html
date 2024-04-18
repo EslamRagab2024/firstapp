@@ -1,0 +1,24 @@
+<div class="container">
+<div *ngIf="tasksservice.tasks.length==0">
+    <p class="alert alert-danger">no tasks found</p>
+</div>
+<div *ngIf="tasksservice.tasks.length!=0">
+    
+    <ul class="list-group">
+        <div class="horizontal-container">
+        <li class="list-group-item" *ngFor="let task of tasksservice.tasks ; index as i">
+            <a [routerLink]="['/edittask',i]">
+            {{task.Name}}
+            </a>
+            <input type="checkbox" [checked]="task.completed" (change)="updateTaskStatus(i)">
+            <button class="btn btn-danger" (click)="deletetask(i)">
+                Delete
+            </button>
+        </li>
+    </div>
+    </ul>
+</div>
+<div>
+    <button routerLink="/add-task" class="btn btn-secondary">Add Task</button>
+</div>
+</div>
